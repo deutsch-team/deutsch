@@ -3,7 +3,7 @@ import os                                   #Used to open and read files
 import sys                                  #Used to get the parameters specified at the launch of the program via the cmd or terminal
 import json                                 #Used to check if a command in a .de file exists, if it doesn't the entire line does't have to be interpreted, just to find out it's command doesn't even exists. Makes things a lot easier.
 from datetime import datetime               #Used to provite date and time of an error in the errorlog.
-
+import cmdschreibe
 
 
 
@@ -78,14 +78,16 @@ print('[Starting the program]','\n')
 file = open(args[0])                                                                                                                      ### OPENS FILE ###
 
 for i in range(linesInFile):                                        ##Line reading loop
-    currentLine = file.readline()                                   ##Save current line as currentLine
-    currentLineChars = list(currentLine)                            ##Save all characters of currentLine in the list calles currentLineChars
+    currentLine = file.readline()
+    ##Save current line as currentLine
+    currentLineChars = list(currentLine)
+    ##Save all characters of currentLine in the list calles currentLineChars
     #Start reading the characters
     if not currentLineChars[-1] == '.':
         exit()
     
     if ''.join(currentLineChars[0:9]) == 'schreibe ':
-        CMDschreibe(currentLineChars[9:])
+        cmdschreibe.cmd_schreibe(currentLineChars[9:])
     else:
         exit()
         
