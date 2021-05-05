@@ -2,9 +2,8 @@
 import sys
 
 import cmdschreibe
-from .. import util
-from .. import var
-
+import util
+import var
 
 def is_schreibe(arg):
     if arg[0:9] == 'schreibe ':
