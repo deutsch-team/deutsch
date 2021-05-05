@@ -1,6 +1,7 @@
 # AUTHOR: JAKOB WILMS
 
 import cache
+import util
 
 
 def add_var(arg):  # Add new Var and Value, or change Value if var exists
@@ -32,12 +33,12 @@ def get_var_pos(name):  # Returns: Pos of The Var with the Name
     return i  # Return pos
 
 
-def remove_spaces(arg):
+def remove_spaces(arg):  # Remove Spaces before and after '='
     output = ''
-    for character in arg:
-        if character != ' ':
+    for character in arg:  # Iterate through all characters
+        if character != ' ':  # Add only if it isn't ' '
             output += character
-    return output
+    return output  # Return
 
 
 def get_var(arg):
@@ -49,12 +50,12 @@ def get_var(arg):
     name = ''
     value = None
     i = 0
-    for character in arg:
-        if character == '=':
+    for character in arg:  # Iterate through all Characters in arg
+        if character == '=':  # Var Name is before '='
             naming = False
         elif naming:
             name += character
-            i += 1
+            i += 1  # End of Var-Name
         else:
             if first_value_char:
                 if character == '"':
@@ -78,8 +79,11 @@ def get_var(arg):
                 else:
                     break
     if number:
-        if dot:
-            value = float(arg[i+1:])
-        else:
-            value = int(arg[i+1:])
+        try:
+            value = float(arg[i + 1:])
+        except ValueError:
+            try:
+                value = int(arg[i + 1:])
+            except ValueError:
+                util.error("Syntax Error: Can not convert to Float / Int")
     return name, value
