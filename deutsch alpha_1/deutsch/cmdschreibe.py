@@ -1,11 +1,14 @@
 # AUTHOR: JAKOB WILMS
 
 import cache
+import var
 
 
 def cmd_schreibe(args):
     if args[0] == '"' and args[-1] == '"':  # String
         print(''.join(args[1:-1]))  # Print without '"'
+    elif args[0] == '€':
+        print(str(var.get_value(args[1:])))
     else:
         number = True
         point = False

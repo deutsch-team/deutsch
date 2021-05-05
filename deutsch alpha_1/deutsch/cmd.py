@@ -37,8 +37,6 @@ def cmd(text, current_char):
             schreibe(arg[9:])
         elif is_variable(arg):
             add_var(arg)
-            print(cache.VAR_NAMES)
-            print(cache.VAR_VALUES)
         else:
             util.error("Invalid Syntax")
             sys.exit()

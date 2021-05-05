@@ -1,5 +1,6 @@
 schreibe "Hallo Welt".
 €var = 45.
+schreibe €var.
+€var2 = "Hallo".
+schreibe €var2.
  schreibe "Test".
- schreibe 3.
- schreibe 42,4.

@@ -19,6 +19,18 @@ def add_var(arg):
         cache.VAR_VALUES[i] = value
 
 
+def get_value(name):
+    i = 0
+    for s in cache.VAR_NAMES:
+        if name == s:
+            break
+        i += 1
+    if i == len(cache.VAR_NAMES):
+        return None
+    else:
+        return cache.VAR_VALUES[i]
+
+
 def remove_spaces(arg):
     output = ''
     for character in arg:
@@ -46,6 +58,7 @@ def get_var(arg):
             if first_value_char:
                 if character == '"':
                     string = True
+                    number = False
                     value = ""
                 elif character not in cache.NUMBERS:
                     if character == ',':
