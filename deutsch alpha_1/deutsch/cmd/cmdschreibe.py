@@ -1,7 +1,7 @@
 # AUTHOR: JAKOB WILMS
 
-import cache
-import var
+from .. import cache
+from .. import var
 
 
 def cmd_schreibe(args):

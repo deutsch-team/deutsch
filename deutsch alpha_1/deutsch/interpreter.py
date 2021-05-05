@@ -2,7 +2,7 @@
 
 import os
 import sys
-import cmd
+from cmd import cmd
 import util
 
 ###########################################
