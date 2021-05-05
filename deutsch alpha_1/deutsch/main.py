@@ -84,6 +84,7 @@ for i in range(linesInFile):                                        ##Line readi
     ##Save all characters of currentLine in the list calles currentLineChars
     #Start reading the characters
     if not currentLineChars[-1] == '.':
+        print("exit, no .")
         exit()
     
     if ''.join(currentLineChars[0:9]) == 'schreibe ':
