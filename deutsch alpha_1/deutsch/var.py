@@ -7,11 +7,7 @@ def add_var(arg):  # Add new Var and Value, or change Value if var exists
     arg = arg[1:]  # Remove '€'
     arg = remove_spaces(arg)  # Remove spaces before and after '='
     name, value = get_var(arg)  # Get Name and Value
-    i = 0
-    for var_name in cache.VAR_NAMES:
-        if var_name == name:  # Var exists already
-            break
-        i += 1  # Pos of Var
+    i = get_var_pos(name)  # Get Pos
     if i == len(cache.VAR_NAMES):  # Var not existing
         cache.VAR_NAMES.append(name)  # Append Name
         cache.VAR_VALUES.append(value)  # Append Value
@@ -19,16 +15,21 @@ def add_var(arg):  # Add new Var and Value, or change Value if var exists
         cache.VAR_VALUES[i] = value  # Change value
 
 
-def get_value(name):
+def get_value(name):  # Returns: Value of the var with the name, or None
+    i = get_var_pos(name)  # Get Pos
+    if i == len(cache.VAR_NAMES):  # Var not existing
+        return None  # Returns None
+    else:  # Var existing
+        return cache.VAR_VALUES[i]  # Return Value
+
+
+def get_var_pos(name):  # Returns: Pos of The Var with the Name
     i = 0
-    for s in cache.VAR_NAMES:
-        if name == s:
+    for s in cache.VAR_NAMES:  # Iterate through all names
+        if s == name:  # Var found
             break
-        i += 1
-    if i == len(cache.VAR_NAMES):
-        return None
-    else:
-        return cache.VAR_VALUES[i]
+        i += 1  # Add 1
+    return i  # Return pos
 
 
 def remove_spaces(arg):
