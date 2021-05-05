@@ -1,6 +1,6 @@
 def cmd_schreibe(args):
-    if args[0] == '"' and args[-2] == '"':  # String
-        print(''.join(args[1:-2]))  # Print without '"'
+    if args[0] == '"' and args[-1] == '"':  # String
+        print(''.join(args[1:-1]))  # Print without '"'
     else:
         number = True
         point = False

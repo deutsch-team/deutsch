@@ -21,11 +21,13 @@ def cmd(text, current_char):
     if i != -1:
         arg = text[current_char:i]
         if is_schreibe(arg):
-            schreibe(arg)
+            schreibe(arg[9:])
         else:
             util.error("Invalid Syntax")
             sys.exit()
-        cmd(text, i)
+        if i == len(text) - 1:
+            sys.exit()
+        cmd(text, i + 1)
     else:
         util.debug("EXIT")
         sys.exit()

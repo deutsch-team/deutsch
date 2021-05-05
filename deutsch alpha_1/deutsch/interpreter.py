@@ -27,10 +27,8 @@ else:  # Wrong Format
     if continuing == "N" or continuing == "n":
         sys.exit()  # Exit
 data = file.read()  # Read File
-print(data)
 file.close()  # Close File
 text = util.remove_line_breaks(data)  # Remove Line Breaks
-print(text)
 text = util.remove_spaces_after_dots(text)
 print(text)
 ###########################################

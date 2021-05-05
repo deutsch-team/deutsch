@@ -13,7 +13,7 @@ def error(message):
 
 
 def get_next_dot(text, current_char):
-    i = 0
+    i = current_char
     text = text[current_char:]
     for character in text:
         if character == '.':
@@ -23,8 +23,9 @@ def get_next_dot(text, current_char):
 
 
 def remove_line_breaks(data):
-    removed = data.strip('\n')  # Remove Unix Line Breaks
-    removed = removed.strip('\r')  # Remove Windows Line Breaks
+    removed = data.replace('\n', '')
+    removed = removed.replace('\r', '')
+    print(removed)
     return removed
 
 
@@ -46,4 +47,6 @@ def remove_spaces_after_dots(text):
             if character != ' ':  # If Character is ' ', nothing should happen
                 dot = False
                 output += character  # Append character to output
+        else:
+            output += character  # Append character to output
     return output

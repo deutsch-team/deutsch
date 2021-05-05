@@ -22,7 +22,7 @@
   echo "Git wird benötigt!"
   echo "Jetzt installieren? [J/N]"
   read -r installGit
-  if [ $installGit == "J" || $installGit == "j"]; then
+  if [ "$installGit" == "J" ] || [ "$installGit" == "j" ]; then
     sudo apt-get install git
     echo "Jetzt installieren? [J/N]"
     read -r installieren
