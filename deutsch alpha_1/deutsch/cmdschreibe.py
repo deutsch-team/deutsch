@@ -5,7 +5,7 @@ def cmd_schreibe(args):
         number = True
         point = False
         numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-        for arg in args[0:-1]:  # Iterate through all characters in args
+        for arg in args:  # Iterate through all characters in args
             if arg not in numbers:  # If arg isn't a number
                 if arg == ",":  # Float/Double
                     if not point:  # There can only be one '.'
@@ -17,4 +17,4 @@ def cmd_schreibe(args):
                     number = False  # Else it isn't a number
                     break  # Exit Loop
         if number:  # Print only if it is a number
-            print(''.join(args[0:-1]))
+            print(''.join(args))

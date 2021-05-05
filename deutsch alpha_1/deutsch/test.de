@@ -1,3 +1,4 @@
 schreibe "Hallo Welt".
  schreibe "Test".
- schreibe "3".
+ schreibe 3.
+ schreibe 42,4.
