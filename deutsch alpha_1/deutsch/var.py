@@ -3,20 +3,20 @@
 import cache
 
 
-def add_var(arg):
-    arg = arg[1:]
-    arg = remove_spaces(arg)
-    name, value = get_var(arg)
+def add_var(arg):  # Add new Var and Value, or change Value if var exists
+    arg = arg[1:]  # Remove '€'
+    arg = remove_spaces(arg)  # Remove spaces before and after '='
+    name, value = get_var(arg)  # Get Name and Value
     i = 0
     for var_name in cache.VAR_NAMES:
-        if var_name == name:
+        if var_name == name:  # Var exists already
             break
-        i += 1
-    if i == len(cache.VAR_NAMES):
-        cache.VAR_NAMES.append(name)
-        cache.VAR_VALUES.append(value)
-    else:
-        cache.VAR_VALUES[i] = value
+        i += 1  # Pos of Var
+    if i == len(cache.VAR_NAMES):  # Var not existing
+        cache.VAR_NAMES.append(name)  # Append Name
+        cache.VAR_VALUES.append(value)  # Append Value
+    else:  # Var existing
+        cache.VAR_VALUES[i] = value  # Change value
 
 
 def get_value(name):
