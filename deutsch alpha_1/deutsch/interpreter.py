@@ -30,7 +30,7 @@ data = file.read()  # Read File
 file.close()  # Close File
 text = util.remove_line_breaks(data)  # Remove Line Breaks
 text = util.remove_spaces_after_dots(text)
-print(text)
+
 ###########################################
 ###########################################
 

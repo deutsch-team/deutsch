@@ -25,15 +25,18 @@ def schreibe(args):
     cmdschreibe.cmd_schreibe(args)
 
 
+def add_var(args):
+    var.add_var(args)
+
+
 def cmd(text, current_char):
     i = util.get_next_dot(text, current_char)
     if i != -1:
         arg = text[current_char:i]
-        print(str(arg))
         if is_schreibe(arg):
             schreibe(arg[9:])
         elif is_variable(arg):
-            var.add_var(arg)
+            add_var(arg)
             print(cache.VAR_NAMES)
             print(cache.VAR_VALUES)
         else:

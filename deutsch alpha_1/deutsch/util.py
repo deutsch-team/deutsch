@@ -25,7 +25,6 @@ def get_next_dot(text, current_char):
 def remove_line_breaks(data):
     removed = data.replace('\n', '')
     removed = removed.replace('\r', '')
-    print(removed)
     return removed
 
 
