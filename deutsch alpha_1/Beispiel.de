@@ -1,0 +1,27 @@
+@ Ein einfaches Beispiel-Programm, um die derzeitige Deutsch-Syntax zu demonstrieren.
+  Während der Entwicklung kann dieses Programm mehrfach verändert werden. @
+  
+@ Kommentar @
+
+@ Zeilenende: '.' @
+
+importiere Mathe. @ Import einer Bibliothek @
+importiere Zeit.
+aus Menschen.Finnian importiere Gehirn als FinniansGehirn. @ Import von Teilen einer Bibliothek, Bennenung zum einfachen Zugriff @
+
+€Zahl eineZahl = 5. @ Variablendeklaration: €Typ Name = Wert. @
+€Zahl zweiteZahl = 5,3.
+€Zeichenkette zeichen = "Hallo Welt".
+€Liste eineListe = "Hallo", 5, 12, "Welt". @ Liste: €Liste Name = Wert1, Wert2, ..., WertX. PROBLEM: Gleitkommazahlen @ 
+
+@ Variablentypen: Zahl, Zeichenkette, Liste @
+
+€zeichen = "Moin Welt". @ Wertzuweisung: €Name = Wert. @
+€eineZahl += 2. @ Abkürzung für: €eineZahl = eeineZahl + 2. @
+€eineZahl++. @ Abkürzung für: €eineZahl += 1. @
+
+definiere Zahl summe(€Zahl zahl1, €Zahl zahl2) { @ Funktionsdeklaration: definiere Rückgabetyp Name(Parameter) @
+  Rückgabe zahl1 + zahl2. @ Rückgabe mit Rückgabe @
+}
+
+€Zahl summeBeispiel = summe €eineZahl, 4. @ Funktionsaufruf: Name Parameter1, Parameter2. @
