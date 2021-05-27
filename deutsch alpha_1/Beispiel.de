@@ -25,3 +25,22 @@ definiere Zahl summe(€Zahl zahl1, €Zahl zahl2) { @ Funktionsdeklaration: def
 }
 
 €Zahl summeBeispiel = summe €eineZahl, 4. @ Funktionsaufruf: Name Parameter1, Parameter2. @
+
+€Zahl i = 0.
+Während i < 10 { @ While-Schleife @
+  schreibe "Hallo Welt, zum " + Zeichenkette(ei) + ". Mal!".
+  €i++.
+}
+
+Für €wert in €eineListe { @ For-Schleife @
+  schreibe Zeichenkette(€wert).
+  @ Ausgabe: 
+    Hallo
+    5
+    12
+    Welt
+  @
+}
+Für (€Zahl z = 0. €z < 10. €z++) { @ Zweite Variante der For-Schleife, Abkürzung der While-Schleife @
+  schreibe Zeichenkette(€z).
+}
